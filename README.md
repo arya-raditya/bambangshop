@@ -92,4 +92,16 @@ Although the Singleton pattern can guarantee a single global instance of our Sub
 
 #### Reflection Publisher-2
 
+> 1. In the Model-View Controller (MVC) compound pattern, there is no "Service" and "Repository". Model in MVC covers both data storage and business logic. Explain based on your understanding of design principles, why we need to separate "Service" and "Repository" from a Model?
+
+Separating Service and Repository from the Model improves the design by adhering to the Single Responsibility Principle and Clean Architecture. The Model is primarily responsible for representing the domain data, while the Repository abstracts the data persistence logic, and the Service contains the business logic that orchestrates how data is processed and interacted with. This separation makes the codebase more modular, easier to test, and maintain because changes in one layer (like data storage) do not directly impact the business logic or domain representation. It also provides better scalability, as each component can evolve independently, and potential integrations with other systems can occur with minimal changes. Overall, isolating responsibilities leads to a cleaner and more manageable code structure.
+
+> 2. What happens if we only use the Model? Explain your imagination on how the interactions between each model (Program, Subscriber, Notification) affect the code complexity for each model?
+
+If we only use the Model to handle data storage and business logic, the code becomes tightly coupled and more complex over time. Each model—whether for Program, Subscriber, or Notification—would need to manage its data and logic, leading to duplicated code and increased maintenance overhead. The resulting intermingling of concerns might make it difficult to isolate and fix issues, complicate debugging, and hinder scalability. Moreover, any enhancements or new feature integrations could potentially introduce unintended side effects across models. This tightly coupled design would negatively impact the overall robustness and flexibility of the application.
+
+> 3. Have you explored more about Postman? Tell us how this tool helps you to test your current work. You might want to also list which features in Postman you are interested in or feel like it is helpful to help your Group Project or any of your future software engineering projects.
+
+I have extensively used Postman in previous courses such as PBP and PKPL for testing backend services and find it extremely useful in the current project as well. Postman simplifies the process of sending HTTP requests, enabling me to quickly validate API endpoints and inspect responses in real-time. Its features, like the use of environment variables and the ability to create organized collections of tests, streamline both the development and debugging process. I particularly appreciate the support for automated testing through scripting, which helps in verifying that the backend behaves as expected after changes. These functionalities not only increase my productivity but also ensure a higher quality of code, which is beneficial for group projects and my future software engineering endeavors.
+
 #### Reflection Publisher-3
